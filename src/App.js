@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './pages/Home/Home'
 
 
 
@@ -9,7 +10,9 @@ function App() {
       <div>
         <div>
         <Routes>
-					<Route path="/"  />
+        { /* renvoie sur la home */}
+            <Route path="/" element={<Home />} />
+					
 				
 				</Routes>
         </div>
