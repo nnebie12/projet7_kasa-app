@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from "../assets/logo512.png";
+import LOGOHeader from '../assets/LOGOHeader.png';
 
 
 export default function Header() {
@@ -8,7 +8,7 @@ export default function Header() {
 		<header className="header">
 			{/*Les imahes importées depuis la balise img sont accessible dans public */}
 			<h1>
-			<img src={logo} alt="logo de l'agence kasa" />
+			<img src={LOGOHeader} alt="logo de l'agence kasa" />
 			</h1>
 			
 		</header>

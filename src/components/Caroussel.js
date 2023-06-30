@@ -1,13 +1,13 @@
-import './Caroussel/Caroussel.scss';
-import data from './data/data.json';
-import Card from './Card';
+
+import logements from '../data/logements.json';
+import Card from '../components/Card.js';
 
 
 export default function Caroussel(){
     return(
         //Affichage des Card dans la Home gallery avec les informations de data.json
         <main>
-            {data.map(data =>{
+            {logements.map(data =>{
                 return(
                     <Card
                     key={data.id}

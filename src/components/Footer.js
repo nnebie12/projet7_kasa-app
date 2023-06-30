@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logo192.png'
+import LOGOFooter from '../assets/LOGOFooter.png';
 
 export default function Footer() {
 	return (
@@ -7,7 +7,7 @@ export default function Footer() {
 		<footer className="header">
 			{/*Les imahes importées depuis la balise img sont accessible dans public */}
 			
-			<img src={logo} alt="logo de l'agence kasa" />
+			<img src={LOGOFooter} alt="logo de l'agence kasa" />
             <p className='footer_copy'>© 2020 Kasa. All rights reserved</p>
 			
 			
