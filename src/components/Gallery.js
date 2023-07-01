@@ -1,6 +1,6 @@
 
 import logements from '../data/logements.json';
-import Card from '../components/Card.js';
+import Card from './Card.js';
 
 
 export default function Caroussel(){

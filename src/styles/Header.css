@@ -1,10 +1,22 @@
-.header{
-    @include flex(row, space-between, center);
-    height: 68px;
-    max-width: 95%;
-    margin: 0 auto;
-    @media screen and (max-width: 900px){
-        height: 40px;
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-self: baseline;
+    margin: 20px;
+    width: 90%;
+  }
+  
+  .Header img {
+    height: 50px;
+    width: 180px;
+  }
+  
+  @media screen and (max-width: 699px) {
+    .Header {
+      margin: 20px 30px;
     }
-    
-}
+    .Header img {
+      height: 30px;
+      width: 70px;
+    }
+  }
