@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react";
 import Banner from "../../components/Banner";
 import Card from "../../components/Card";
-import { Link } from "react-router-dom";
-import axios from "axios";
+import styles from "../../styles/Home.css"
+import BannerHeader from "../../assets/BannerHeader.png"
+import logements from '../../data/logements.json'
 
-export default function Home() {
-	const [data, setData] = useState([]);
 
-	useEffect(() => {
-		axios.get("/data.json").then((res) => setData(res.data)); //requète AXIOS ici également pour prochaine utilisation API
-	}, []);
 
+
+function Home() {
 	return (
-		<>
-			<Banner />
-			<div className="cards-container">
-				{data.map((appart, id) => (
-					<div className="card_logement" key={id}>
-						<Link className="link_card_logement" to={`/logement/${appart.id}`}>
-							<Card cover={appart.cover} title={appart.title} />
-						</Link>
-					</div>
-				))}
-			</div>
-		</>
+	   <div>
+		  <Banner image={BannerHeader} text="Chez vous, partout et ailleurs" />
+		  <div className={styles.cardContainer}>
+			 {logements.map((logements) => (
+				<Card
+				   key={logements.id}
+				   id={logements.id}
+				   cover={logements.cover}
+				   title={logements.title}
+				/>
+			 ))}
+		  </div>
+	   </div>
 	);
-}
-
-
+ }
+ 
+ export default Home;
+ 

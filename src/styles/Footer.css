@@ -4,18 +4,31 @@
     align-items: center;
     background-color: black;
     color: white;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 25px;
-    height: 100px;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
   }
   
-  .footer img {
-    width: 100px;
-  }
+  .logo {
+    height: 50px;
+    margin-bottom: 20px;
+ }
   
-  .footer_copy {
+  .footer p {
     color: white;
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .footer p {
+       font-size: 0.8em;
+       width: 30%;
+    }
+ 
+    .logo {
+       margin-bottom: 10px;
+       height: 45px;
+    }
+ }
   
   

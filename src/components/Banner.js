@@ -1,12 +1,19 @@
-import '../styles/Banner.css'
+import styles from '../styles/Banner.css'
 
-export default function Banner() {
+
+function Banner({ image, text }) {
 	return (
-		<div className="banner-container">
-			
-				<img className='banner-image' src='{style.image}' alt=''/>
-				<h1>Chez vous, partout et ailleurs</h1>
-			
-		</div>
+	   <div
+		  className={styles.banner}
+		  style={{ backgroundImage: `url(${image})` }}
+	   >
+		  <h1>{text}</h1>
+	   </div>
 	);
-}
+ }
+ 
+ export default Banner;
+
+
+
+

@@ -1,22 +1,28 @@
-.Header {
+
+  .header {
     display: flex;
     justify-content: space-between;
-    align-self: baseline;
-    margin: 20px;
-    width: 90%;
-  }
-  
-  .Header img {
+    margin-top: 30px;
+ }
+ 
+ .logo {
     height: 50px;
-    width: 180px;
-  }
-  
-  @media screen and (max-width: 699px) {
-    .Header {
-      margin: 20px 30px;
+ }
+ 
+ .nav {
+    display: flex;
+    gap: 50px;
+    list-style-type: none;
+ }
+ 
+ @media only screen and (max-width: 600px) {
+    .logo {
+       height: 40px;
     }
-    .Header img {
-      height: 30px;
-      width: 70px;
+ 
+    .nav {
+       gap: 20px;
+       padding-inline-start: 30px;
     }
-  }
+ }
+ 

@@ -1,40 +1,26 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Apropos from './pages/Apropos/Apropos';
+import LogementsPagesRoutes from './pages/Logements/LogementsPagesRoutes';
+import Header from './components/Header';
 import NoFoundPage from './pages/NoFoundPage/NoFoundPage';
-import Logements from './pages/Logements/Logements';
-
-
+import Footer from './components/Footer';
 
 function App() {
-	return (
-		<BrowserRouter>
-      <div className="App">
-        <Header/>
-        <div>
-        <Routes>
-        { /* renvoie sur la home */}
+   return (
+      <Router>
+         <Header />
+         <Routes>
+            <Route path="/apropos" element={<Apropos />} />
             <Route path="/" element={<Home />} />
-            { /* renvoie sur la page a propos */}
-            <Route path="/a_propos" element={<Apropos />} />
-            { /* renvoie sur la page fiche logement */}
-            <Route path="/fiche_logement/:id" element={<Logements />} />
-            { /* path="*" fonctionne si jamais l'URL ne correspond à rien de déclaré au dessus */}
-            <Route path="/*" element={<NoFoundPage />} />
-
-					
-				
-				</Routes>
-        </div>
-        <Footer/>
-      
-      </div>
-
-    </BrowserRouter>
-	);
+            <Route path="/logement/:id" element={<LogementsPagesRoutes />} />
+            <Route path="*" element={<NoFoundPage />} />
+            <Route path="/nofound" element={<NoFoundPage />} />
+         </Routes>
+         <Footer />
+      </Router>
+   );
 }
 
 export default App;
