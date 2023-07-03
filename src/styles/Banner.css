@@ -1,5 +1,5 @@
 .banner {
-	height: 250px;
+	height: 500px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,6 +10,8 @@
 	position: relative;
 	margin-top: 50px;
  }
+
+ 
  
  .banner::before {
 	content: '';

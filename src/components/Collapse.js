@@ -10,7 +10,7 @@ function Collapse({ title, children, className, contentClassName }) {
 
    return (
       <div className={`${styles.collapse} ${className}`}>
-         <div className={styles.header} onClick={toggleOpen}>
+         <div className={styles.Header} onClick={toggleOpen}>
             <h2>{title}</h2>
             <img
                src={isOpen ? upVector : downVector}
