@@ -6,10 +6,10 @@ export default function Footer() {
 	return (
 		//Affichage du logo en h1 et du menu
 		<footer className={styles.footer}>
-			{/*Les imahes importées depuis la balise img sont accessible dans public */}
+			{/*Les images importées depuis la balise img sont accessible dans public */}
 			
 			<img className={styles.logo} src={LOGOFooter} alt="Logo" />
-            <p className='footer_copy'>© 2020 Kasa. All rights reserved</p>
+            <p>© 2020 Kasa. All rights reserved</p>
 			
 			
 		</footer>
