@@ -1,26 +1,39 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Home';
-import Apropos from './pages/Apropos/Apropos';
-import LogementsPagesRoutes from './pages/Logements/LogementsPagesRoutes';
-import Header from './components/Header';
-import NoFoundPage from './pages/NoFoundPage/NoFoundPage';
-import Footer from './components/Footer';
+import LogementsPages from "./pages/Logements/LogementsPages";
+import AproposPages from "./pages/Apropos/AproposPages"
+import NotFoundPages from "./pages/NoFoundPage/NotFoundPages"
+import Header from "./components/Header";
+import Footer from "./components/Footer"
+
+
+
 
 function App() {
    return (
       <Router>
          <Header />
          <Routes>
-            <Route path="/apropos" element={<Apropos />} />
+            
             <Route path="/" element={<Home />} />
-            <Route path="/logement/:id" element={<LogementsPagesRoutes />} />
-            <Route path="*" element={<NoFoundPage />} />
-            <Route path="/no-found" element={<NoFoundPage />} />
-         </Routes>
-         <Footer />
-      </Router>
-   );
+            { /* renvoie sur la page logements */}
+            <Route path="/logement/:id" element={<LogementsPages />}/>
+            <Route path="/about" element={<AproposPages />} />
+            <Route path="*" element={<NotFoundPages />} />
+            <Route path="/not-found" element={<NotFoundPages />} />
+            
+
+					
+				
+				</Routes>
+       
+        <Footer/>
+      
+      
+
+    </Router>
+	);
 }
 
 export default App;
