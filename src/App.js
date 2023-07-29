@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Home from './pages/Home/Home';
 import LogementsPages from "./pages/Logements/LogemenstPages";
 import AproposPages from "./pages/Apropos/AproposPages"
-import NotFoundPages from "./pages/NoFoundPage/NoFoundPages"
+import NotFoundPages from "./pages/NoFoundPage/NotFoundPages"
 
 
 
