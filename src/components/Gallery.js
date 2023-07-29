@@ -57,3 +57,5 @@ function Gallery({ pictures }) {
 }
 
 export default Gallery;
+
+

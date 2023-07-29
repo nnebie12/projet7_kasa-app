@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 
 
+function Card({ id, title, cover }) {
 
-
-    function Card({ id, cover, title }) {
+    
         return (
             
                 <Link to={`/logement/${id}`} className="card">
@@ -21,4 +21,4 @@ import { Link } from 'react-router-dom';
        
     }
      
-     export default Card;
+    export default Card

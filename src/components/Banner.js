@@ -12,5 +12,7 @@ export default function Banner({image, text}) {
 	  </div>
 	);
  }
- 
- 
+
+
+
+

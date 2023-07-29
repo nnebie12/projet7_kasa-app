@@ -1,8 +1,8 @@
+import React from 'react';
 import LOGOHeader from '../assets/LOGOHeader.png';
 import styles from '../styles/Header.css'
 import NavBar from '../components/NavBar';
 import  '../styles/NavBar.css'
-
 
 
 export default function Header() {
@@ -16,5 +16,3 @@ export default function Header() {
 		</header>
 	);
 }
-
-
