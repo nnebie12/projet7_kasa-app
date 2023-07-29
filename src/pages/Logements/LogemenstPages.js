@@ -1,16 +1,19 @@
 import { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Gallery from '../../components/Gallery';
-import logementsData from '../../datas/logements.json';
-import styles from '../../styles/LogementsPages.css';
+import logementsData from '../../data/logements.json';
+import '../../styles/LogementsPages.css';
 import Collapse from '../../components/Collapse';
 import Rating from '../../components/Rating';
 
+
 function LogementsPages() {
+   //useParams est un hook de composant client qui permet de récupérer l'id dans l'URL
    const { id } = useParams();
    const navigate = useNavigate();
+   // on récupère le logement associé à l'id de l'URL
    const logement = logementsData.find((logement) => logement.id === id);
-
+// useEffect  est un hook qui permet d'exécuter des actions après le rendu des composants en choisissant à quel moment et à quelle fréquence cette action doit être exécutée
    useEffect(() => {
       if (!logement) {
          navigate('/not-found');
@@ -24,43 +27,48 @@ function LogementsPages() {
    return (
       <div>
          <Gallery pictures={logement.pictures} />
-         <div className={styles.logementContainer}>
-            <h1 className={styles.title}>{logement.title}</h1>
-            <h2 className={styles.location}>{logement.location}</h2>
-            <ul className={styles.tagsContainer}>
+         <div className="logementContainer">
+            <h4 className="logement_title">{logement.title}</h4>
+            <h5 className="location">{logement.location}</h5>
+            <ul className="tagsContainer">
                {logement.tags.map((tag, index) => (
-                  <li key={index} className={styles.tags}>
+                  <li key={index} className="tags">
                      {tag}
                   </li>
                ))}
             </ul>
-            <div className={styles.hostContainer}>
-               <div className={styles.hostDef}>
+            <div className="hostContainer">
+               <div className="hostDef">
                   <h2>{logement.host.name}</h2>
                   <img src={logement.host.picture} alt={logement.host.name} />
                </div>
-               <Rating rating={logement.rating} className={styles.rating} />
+               <Rating rating={logement.rating} className="rating" />
             </div>
-            <div className={styles.collapseContainer}>
+            <div className="collapseContainer">
+               <div className="collapseDescription">
                <Collapse
                   title="Description"
-                  className={styles.collapseDescription}
-                  contentClassName={styles.collapseContent}
+                  content={logement.description}  /*Pour toutes les autres descriptions*/
                >
-                  <p className={styles.collapseP}>{logement.description}</p>
+                 
                </Collapse>
+               </div>
+              
                <Collapse
                   title="Equipements"
-                  className={styles.collapseEquipments}
-                  contentClassName={styles.collapseContent}
-               >
-                  <ul className={styles.collapseUl}>
-                     {logement.equipments.map((equipments, index) => (
-                        <li key={index} className={styles.equipments}>
+                  className="collapseEquipments"
+                  content=
+                  {<ul className="collapseUl">
+                     {logement.equipments.map((equipments, index) => ( // Pour les listes d'équipements des appartements
+                        <li key={index} className="equipments">
                            {equipments}
                         </li>
                      ))}
-                  </ul>
+                  </ul>}
+
+                  
+               >
+                  
                </Collapse>
             </div>
          </div>
@@ -69,3 +77,7 @@ function LogementsPages() {
 }
 
 export default LogementsPages;
+
+
+
+

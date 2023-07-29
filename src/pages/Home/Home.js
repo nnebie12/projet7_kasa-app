@@ -6,8 +6,8 @@ import Card from '../../components/Card'
 
 
 
-
-function Home() {
+export default function Home() {
+	
 	return (
 		<div>
          <Banner image={BannerHeader} text="Chez vous, partout et ailleurs" />
@@ -23,7 +23,7 @@ function Home() {
          </div>
       </div>
 	);
- }
+}
  
- export default Home;
+ 
  

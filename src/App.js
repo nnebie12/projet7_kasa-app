@@ -1,21 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import LogementsPages from "./pages/Logements/LogementsPages";
-import AproposPages from "./pages/Apropos/AproposPages"
-import NotFoundPages from "./pages/NoFoundPage/NotFoundPages"
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import Home from './pages/Home/Home';
+import LogementsPages from "./pages/Logements/LogemenstPages";
+import AproposPages from "./pages/Apropos/AproposPages"
+import NotFoundPages from "./pages/NoFoundPage/NoFoundPages"
 
 
 
 
 function App() {
-   return (
-      <Router>
-         <Header />
-         <Routes>
-            
+	return (
+		<BrowserRouter>
+      <div className="App">
+        <Header/>
+        <div>
+        <Routes>
+        { /* renvoie sur la home */}
             <Route path="/" element={<Home />} />
             { /* renvoie sur la page logements */}
             <Route path="/logement/:id" element={<LogementsPages />}/>
@@ -27,12 +29,12 @@ function App() {
 					
 				
 				</Routes>
-       
+        </div>
         <Footer/>
       
-      
+      </div>
 
-    </Router>
+    </BrowserRouter>
 	);
 }
 
