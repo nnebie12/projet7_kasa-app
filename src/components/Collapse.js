@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import downVector from '../assets/downVector.png';
 import upVector from '../assets/upVector.png';
-import styles from '../styles/Collapse.css';
+import'../styles/Collapse.css';
 
-function Collapse({ title, children, className, contentClassName }) {
-   const [isOpen, setIsOpen] = useState(false);
+function Collapse({ title, content }) {
+   const [isOpen, setIsOpen] = useState(false); //useSate est un hook qui permet d'ajouter un state local dans un composant fonction
 
    const toggleOpen = () => setIsOpen(!isOpen);
 
    return (
-      <div className={`${styles.collapse} ${className}`}>
-         <div className={styles.Header} onClick={toggleOpen}>
+      <div className="collapse">
+         <div className="header" onClick={toggleOpen}>
             <h2>{title}</h2>
             <img
                src={isOpen ? upVector : downVector}
@@ -18,8 +18,8 @@ function Collapse({ title, children, className, contentClassName }) {
             />
          </div>
          {isOpen && (
-            <div className={`${styles.content} ${contentClassName}`}>
-               {children}
+            <div className="content">
+               {content}
             </div>
          )}
       </div>

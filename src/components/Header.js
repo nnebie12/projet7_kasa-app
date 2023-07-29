@@ -1,61 +1,18 @@
+import React from 'react';
 import LOGOHeader from '../assets/LOGOHeader.png';
-import styles from '../styles/Header.css';
+import styles from '../styles/Header.css'
+import NavBar from '../components/NavBar';
+import  '../styles/NavBar.css'
 
-import { NavLink, useLocation } from 'react-router-dom';
 
-function Header() {
-   const location = useLocation();
-
-   return (
-      <header className={styles.header}>
-         <img src={LOGOHeader} alt="Logo" className={styles.logo} />
-         <nav>
-            <ul className={styles.nav}>
-               <li>
-                  <NavLink
-                     to="/"
-                     style={
-                        location.pathname === '/'
-                           ? {
-                                textDecoration: 'underline',
-                                color: '#ff6060',
-                                fontSize: '1.3em',
-                             }
-                           : {
-                                textDecoration: 'none',
-                                color: '#ff6060',
-                                fontSize: '1.3em',
-                             }
-                     }
-                  >
-                     Accueil
-                  </NavLink>
-               </li>
-               <li>
-                  <NavLink
-                     to="/about"
-                     style={
-                        location.pathname === '/about'
-                           ? {
-                                textDecoration: 'underline',
-                                color: '#ff6060',
-                                fontSize: '1.3em',
-                             }
-                           : {
-                                textDecoration: 'none',
-                                color: '#ff6060',
-                                fontSize: '1.3em',
-                             }
-                     }
-                  >
-                     À propos
-                  </NavLink>
-               </li>
-            </ul>
-         </nav>
-      </header>
-   );
+export default function Header() {
+	return (
+		//Affichage du logo en h1 et du menu
+		<header>
+			{/*Les images importées depuis la balise img sont accessible dans public */}
+			<img src={LOGOHeader} alt="logo de l'agence kasa" className= {styles.logo}/>
+		
+			<NavBar></NavBar>
+		</header>
+	);
 }
-
-export default Header;
-

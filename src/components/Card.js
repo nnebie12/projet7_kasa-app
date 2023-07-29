@@ -1,17 +1,24 @@
-import styles from '../styles/Card.css'
+import '../styles/Card.css'
 import { Link } from 'react-router-dom';
 
 
 
+function Card({ id, title, cover }) {
 
-
-    function Card({ id, cover, title }) {
+    
         return (
-           <Link to={`/logement/${id}`} className={styles.card}>
-              <img className={styles.cardImage} src={cover} alt={title} />
-              <h2 className={styles.cardTitle}>{title}</h2>
-           </Link>
-        );
-     }
+            
+                <Link to={`/logement/${id}`} className="card">
+                    <img className="cardImage" src={cover} alt={title} />
+                    <h1 className="cardTitle">{title}</h1>
+                 </Link>
+                
+              
+             );
+    
+        
+            
+       
+    }
      
-     export default Card;
+    export default Card
